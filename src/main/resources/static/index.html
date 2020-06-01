@@ -1,0 +1,27 @@
+<head>
+
+    <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+
+   
+
+</head>
+
+<body>
+    <h1>simulation :</h1>
+<div id='myDiv'><!-- Plotly chart will be drawn inside this DIV --></div>
+    
+    
+     <script>
+        var trace1 = {
+  x: ['10-Mar-2020', '11-Mar-2020', '12-Mar-2020', '13-Mar-2020'],
+  y: [10, 15, 13, 17],
+  type: 'lines'
+};
+
+
+
+var data = [trace1];
+
+Plotly.newPlot('myDiv', data);
+    </script>
+</body>
