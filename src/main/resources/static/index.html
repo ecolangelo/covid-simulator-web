@@ -9,19 +9,25 @@
 <body>
     <h1>simulation :</h1>
 <div id='myDiv'><!-- Plotly chart will be drawn inside this DIV --></div>
-    
-    
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
      <script>
-        var trace1 = {
-  x: ['10-Mar-2020', '11-Mar-2020', '12-Mar-2020', '13-Mar-2020'],
-  y: [10, 15, 13, 17],
-  type: 'lines'
-};
+     $(document).ready(function(){
+
+    $.ajax({url: "http://localhost:8080/national", success: function(result){
+        console.log(result);
+        var trace = {
+                        x: result.plottyLineForInfections.x,
+                        y: result.plottyLineForInfections.y,
+                        type: 'lines'
+                        }
+                        var data = [trace];
+
+        Plotly.newPlot('myDiv', data);
+        }});
+
+    });
 
 
-
-var data = [trace1];
-
-Plotly.newPlot('myDiv', data);
     </script>
 </body>
